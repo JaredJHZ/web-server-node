@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 var app = express();
 const fs = require('fs');
+
+const port = process.env.PORT || 3030;
 app.use(express.static(__dirname + '/assets'));
 
 app.set('view engine','hbs');
@@ -54,6 +56,6 @@ app.get('/about',(req,res)=>{
 
 
 
-app.listen(4040,()=>{
-    console.log('Server is port in 4040');
+app.listen(port,()=>{
+    console.log('Server is port in '+port );
 });
